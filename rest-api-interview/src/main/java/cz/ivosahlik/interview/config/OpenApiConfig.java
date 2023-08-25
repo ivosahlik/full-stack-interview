@@ -21,13 +21,14 @@ public class OpenApiConfig {
 
     @Bean
     public OpenAPI openAPI() {
-        return new OpenAPI().addSecurityItem(new SecurityRequirement().
-                        addList("Bearer Authentication"))
-                .components(new Components().addSecuritySchemes
-                        ("Bearer Authentication", createAPIKeyScheme()))
-                .info(new Info().title("Rest Api - Interview")
+        return new OpenAPI().addSecurityItem(new SecurityRequirement()
+                        .addList("Bearer Authentication"))
+                .components(new Components().addSecuritySchemes("Bearer Authentication", createAPIKeyScheme()))
+                .info(new Info()
+                        .title("Rest Api - Interview")
                         .description("Interview")
-                        .version("1.0").contact(new Contact().name("Ivo Vošahlík")
+                        .version("1.0").contact(new Contact()
+                                .name("Ivo Vošahlík")
                                 .email("ivosahlik@seznam.cz").url("https://github.com/ivosahlik"))
                         .license(new License().name("License of API")
                                 .url("API license URL")));
